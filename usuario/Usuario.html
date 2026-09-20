@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ResetPro — Mi panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="usuario.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <img src="../icono.PNG" alt="ResetPro">
+    </a>
+    <div class="user-box">
+      <div class="avatar">SA</div>
+      <div class="who">
+        <b>Sarah</b>
+        <small>Culturista</small>
+      </div>
+      <a class="logout" id="btnSalir" href="#">Salir</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="greeting">
+    <h1>Hola, Sarah 👋</h1>
+    <p>Esto es lo que tenés hoy en ResetPro.</p>
+  </div>
+
+  <div class="cards">
+
+    <!-- Entrenamiento de la semana -->
+    <section class="card">
+      <div class="card-head">
+        <span class="tag">ENTRENAMIENTO</span>
+        <span class="icon">💪</span>
+      </div>
+      <h2>Entrenamiento de la semana</h2>
+      <p class="sub">Grupo muscular asignado para cada día.</p>
+      <div class="card-body">
+        <div class="week-strip">
+          <div class="day-chip"><span class="d">Lun</span><span class="m">Pecho</span></div>
+          <div class="day-chip today"><span class="d">Mar</span><span class="m">Espalda</span></div>
+          <div class="day-chip"><span class="d">Mié</span><span class="m">Piernas</span></div>
+          <div class="day-chip"><span class="d">Jue</span><span class="m">Hombro</span></div>
+          <div class="day-chip"><span class="d">Vie</span><span class="m">Brazos</span></div>
+          <div class="day-chip"><span class="d">Sáb</span><span class="m">Abodmen</span></div>
+          <div class="day-chip"><span class="d">Dom</span><span class="m">—</span></div>
+        </div>
+        <div class="today-block">
+          <span class="label">Hoy te toca</span>
+          <div class="muscle">Espalda</div>
+          <span class="note">Rutina asignada por tu profesor · 8 ejercicios</span>
+        </div>
+      </div>
+      <a class="card-cta" href="#">Ver rutina completa</a>
+    </section>
+
+    <!-- Turno y reserva -->
+    <section class="card">
+      <div class="card-head">
+        <span class="tag">PRÓXIMO TURNO</span>
+        <span class="icon">📅</span>
+      </div>
+      <h2>Turno y reserva</h2>
+      <p class="sub">Tu próxima sesión confirmada.</p>
+      <div class="card-body">
+        <div class="turno-block">
+          <div class="turno-time">
+            <span class="hora">18:00</span>
+            <span class="fecha">Martes 22 de septiembre</span>
+          </div>
+          <div class="turno-meta">
+            <div><b>Espalda</b>Grupo muscular</div>
+            <div><b>Chacabuco 472</b>Ubicación</div>
+          </div>
+          <div class="turno-prof">
+            <div class="avatar">MC</div>
+            <div class="info">
+              <b>Señor Bigotes</b>
+              <span>Profesor asignado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="card-cta solid" href="#">Reprogramar turno</a>
+    </section>
+
+    <!-- CARD 3: Dieta y macros -->
+    <section class="card">
+      <div class="card-head">
+        <span class="tag">NUTRICIÓN</span>
+        <span class="icon">🥗</span>
+      </div>
+      <h2>Dieta y macros</h2>
+      <p class="sub">Tu consumo de hoy frente a tu objetivo.</p>
+      <div class="card-body">
+        <div class="macro-row">
+          <span class="macro-label">Proteínas</span>
+          <div class="macro-bar"><div class="macro-fill" style="width:72%"></div></div>
+          <span class="macro-val">145 / 200g</span>
+        </div>
+        <div class="macro-row">
+          <span class="macro-label">Carbohidratos</span>
+          <div class="macro-bar"><div class="macro-fill" style="width:58%"></div></div>
+          <span class="macro-val">210 / 360g</span>
+        </div>
+        <div class="macro-row">
+          <span class="macro-label">Grasas</span>
+          <div class="macro-bar"><div class="macro-fill" style="width:40%"></div></div>
+          <span class="macro-val">62 / 155g</span>
+        </div>
+        <div class="cal-summary">
+          <span class="label">Calorías consumidas hoy</span>
+          <span class="kcal">1.840 kcal</span>
+        </div>
+      </div>
+      <a class="card-cta" href="#">Ver plan completo</a>
+    </section>
+
+  </div>
+</main>
+
+  <script src="usuario.js"></script>
+</body>
+</html>

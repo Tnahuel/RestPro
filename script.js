@@ -1,3 +1,5 @@
+
+
 const menuBtn = document.getElementById('menuBtn');
   const navLinks = document.getElementById('navLinks');
   const navAuth = document.getElementById('navAuth');

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ResetPro — Panel de Administración</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Admin.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <img src="../icono.PNG" alt="ResetPro">
+      <span>RESETPRO</span>
+    </a>
+    <div class="user-box">
+      <div class="avatar">BM</div>
+      <div class="who">
+        <b>Benjamin Mosca</b>
+        <small>Cuenta administrador</small>
+      </div>
+      <a class="logout" id="btnSalir" href="../index.html">Salir</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="greeting">
+    <h1>Panel de administración</h1>
+    <p>Acceso completo: gestioná cuentas, turnos, rutinas y planes nutricionales de toda la plataforma.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-chip">
+      <b id="statUsuarios">86</b>
+      <span>Usuarios activos</span>
+    </div>
+    <div class="stat-chip">
+      <b id="statProfesores">7</b>
+      <span>Profesores activos</span>
+    </div>
+    <div class="stat-chip">
+      <b id="statTurnos">14</b>
+      <span>Turnos hoy</span>
+    </div>
+    <div class="stat-chip">
+      <b>3</b>
+      <span>Rutinas pendientes</span>
+    </div>
+  </div>
+
+  <!-- Alta de cuentas + log de actividad -->
+  <div class="grid-2">
+    <section class="card">
+      <div class="card-head">
+        <h2>Alta de usuarios y profesores</h2>
+        <p>Creá una cuenta nueva y asignale un rol dentro de la plataforma.</p>
+      </div>
+
+      <form id="formAlta" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="altaNombre">Nombre completo</label>
+            <input type="text" id="altaNombre" placeholder="Ej: Julián Pérez" required>
+          </div>
+          <div class="field">
+            <label for="altaRol">Rol</label>
+            <select id="altaRol">
+              <option value="usuario">Usuario</option>
+              <option value="profesor">Profesor</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="altaEmail">Email</label>
+            <input type="email" id="altaEmail" placeholder="nombre@resetpro.app" required>
+          </div>
+          <div class="field">
+            <label for="altaPass">Contraseña temporal</label>
+            <input type="password" id="altaPass" placeholder="••••••••" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="altaDetalle" id="altaDetalleLabel">Grupo muscular inicial</label>
+          <input type="text" id="altaDetalle" placeholder="Ej: Espalda">
+        </div>
+        <button type="submit" class="btn-primary">Crear cuenta</button>
+      </form>
+
+      <div class="mini-list" id="altaRecientes">
+        <span class="mini-list-label">Cuentas creadas en esta sesión</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Actividad reciente</h2>
+        <p>Registro de acciones realizadas desde este panel.</p>
+      </div>
+      <ul class="log-list" id="logList">
+        <li><span class="log-time">09:14</span> Se creó la cuenta de <b>Sarah</b> (Usuario)</li>
+        <li><span class="log-time">08:52</span> Turno asignado: <b>Camila</b> con <b>Santino</b>, 20:00 hs</li>
+        <li><span class="log-time">08:30</span> Macros actualizados para <b>Tomas</b></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Turnos + Macros/PDF -->
+  <div class="grid-2">
+    <section class="card">
+      <div class="card-head">
+        <h2>Asignar turno</h2>
+        <p>Vinculá un alumno con un profesor y un horario.</p>
+      </div>
+      <form id="formTurno" novalidate>
+        <div class="field">
+          <label for="turnoAlumno">Alumno</label>
+          <select id="turnoAlumno">
+            <option>Sarah </option>
+            <option>Tomas Criado</option>
+            <option>Camila</option>
+            <option>Lucila</option>
+            <option>Lautaro</option>
+            <option>Thomas</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="turnoProfesor">Profesor</label>
+          <select id="turnoProfesor">
+            <option>Santino</option>
+            <option>Emanuel</option>
+            <option>Mejor profe del best Daniel</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="turnoFecha">Fecha</label>
+            <input type="date" id="turnoFecha">
+          </div>
+          <div class="field">
+            <label for="turnoHora">Horario</label>
+            <input type="time" id="turnoHora">
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Asignar turno</button>
+      </form>
+
+      <div class="mini-list" id="turnosRecientes">
+        <span class="mini-list-label">Turnos asignados en esta sesión</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Macros, micros y PDF por alumno</h2>
+        <p>Cargá el plan nutricional y la rutina de cada alumno.</p>
+      </div>
+      <form id="formMacros" novalidate>
+        <div class="field">
+          <label for="macroAlumno">Alumno</label>
+          <select id="macroAlumno">
+            <option>Sarah</option>
+            <option>Tomas Criado</option>
+            <option>Camila</option>
+            <option>Lucila</option>
+            <option>Thomas</option>
+            <option>Lautaro</option>
+          </select>
+        </div>
+        <div class="field-row three">
+          <div class="field">
+            <label for="macroProt">Proteínas (g)</label>
+            <input type="number" id="macroProt" placeholder="145" min="0">
+          </div>
+          <div class="field">
+            <label for="macroCarb">Carbohidratos (g)</label>
+            <input type="number" id="macroCarb" placeholder="210" min="0">
+          </div>
+          <div class="field">
+            <label for="macroGrasa">Grasas (g)</label>
+            <input type="number" id="macroGrasa" placeholder="62" min="0">
+          </div>
+        </div>
+        <div class="field">
+          <label for="micros">Micronutrientes</label>
+          <textarea id="micros" rows="2" placeholder="Ej: Vitamina D, Magnesio, Omega 3"></textarea>
+        </div>
+        <div class="field">
+          <label>Adjuntar PDF (dieta o rutina)</label>
+          <label class="file-upload" for="macroPdf">
+            <span id="fileLabel">Elegir archivo PDF</span>
+          </label>
+          <input type="file" id="macroPdf" accept="application/pdf" hidden>
+        </div>
+        <button type="submit" class="btn-primary">Guardar plan</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Estudiantes activos -->
+  <section class="card full">
+    <div class="card-head">
+      <h2>Estudiantes activos</h2>
+    <!-- sin restricciones debido a que es admins -->
+      <p>Vista general de todos los alumnos en la plataforma.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table id="tablaEstudiantes">
+        <thead>
+          <tr>
+            <th>Alumno</th>
+            <th>Grupo muscular</th>
+            <th>Profesor asignado</th>
+            <th>Último turno</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="who-cell"><span class="avatar">SA</span>Sarah</td>
+            <td>Espalda</td>
+            <td>Santino</td>
+            <td>Hoy · 18:00</td>
+            <td><span class="status active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="who-cell"><span class="avatar">TC</span>Tomas</td>
+            <td>Piernas</td>
+            <td>Santino</td>
+            <td>Hoy · 19:00</td>
+            <td><span class="status active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="who-cell"><span class="avatar">CA</span>Camila</td>
+            <td>Hombro</td>
+            <td>Santino</td>
+            <td>Hoy · 20:00</td>
+            <td><span class="status active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="who-cell"><span class="avatar">LA</span>Lauty</td>
+            <td>Pecho</td>
+            <td>Santino</td>
+            <td>Hoy · 21:00</td>
+            <td><span class="status pending">Sin rutina</span></td>
+          </tr>
+          <tr>
+            <td class="who-cell"><span class="avatar">TH</span>Thomas</td>
+            <td>Piernas</td>
+            <td>Santino</td>
+            <td>Ayer · 17:00</td>
+            <td><span class="status active">Activo</span></td>
+          </tr>
+          <tr>
+            <td class="who-cell"><span class="avatar">LU</span>Lucila</td>
+            <td>Pecho</td>
+            <td>Sin profesor</td>
+            <td>Hace 3 días</td>
+            <td><span class="status paused">Pausado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>

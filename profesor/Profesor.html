@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ResetPro — Panel del Profesor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Profesor.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <img src="../icono.PNG" alt="ResetPro">
+      <span>RESETPRO</span>
+    </a>
+    <div class="user-box">
+      <div class="avatar">SA</div>
+      <div class="who">
+        <b>Santino</b>
+        <small>Cuenta profesor</small>
+      </div>
+      <a class="logout" id="btnSalir" href="../index.html">Salir</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="greeting">
+    <h1>Hola, Santino 👋</h1>
+    <p>Esta es tu agenda de entrenamientos de hoy.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-chip">
+      <b id="statAlumnos">4</b>
+      <span>Alumnos hoy</span>
+    </div>
+    <div class="stat-chip">
+      <b>18.5</b>
+      <span>Horas esta semana</span>
+    </div>
+    <div class="stat-chip">
+      <b>2</b>
+      <span>Rutinas pendientes</span>
+    </div>
+  </div>
+
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Tus alumnos de hoy</h2>
+      <p>Grupo muscular, horario y rutina asignada de cada sesión.</p>
+    </div>
+
+    <div class="alumnos-list">
+
+      <article class="alumno-row">
+        <div class="alumno-main">
+          <div class="avatar">SA</div>
+          <div class="info">
+            <b>Sarah</b>
+            <span>Espalda · Chacabuco</span>
+          </div>
+        </div>
+        <div class="alumno-time">18:00 hs</div>
+        <div class="alumno-actions">
+          <a class="btn-cta solid" href="rutinas/rutina-espalda.pdf" download>Descargar PDF</a>
+          <a class="btn-cta" href="#">Reagendar</a>
+        </div>
+      </article>
+
+      <article class="alumno-row">
+        <div class="alumno-main">
+          <div class="avatar">TC</div>
+          <div class="info">
+            <b>Tomas</b>
+            <span>Piernas · Chacabuco</span>
+          </div>
+        </div>
+        <div class="alumno-time">19:00 hs</div>
+        <div class="alumno-actions">
+          <a class="btn-cta solid" href="rutinas/rutina-piernas.pdf" download>Descargar PDF</a>
+          <a class="btn-cta" href="#">Reagendar</a>
+        </div>
+      </article>
+
+      <article class="alumno-row">
+        <div class="alumno-main">
+          <div class="avatar">CA</div>
+          <div class="info">
+            <b>Camila</b>
+            <span>Hombro · Chacabuco</span>
+          </div>
+        </div>
+        <div class="alumno-time">20:00 hs</div>
+        <div class="alumno-actions">
+          <a class="btn-cta solid" href="rutinas/rutina-hombro.pdf" download>Descargar PDF</a>
+          <a class="btn-cta" href="#">Reagendar</a>
+        </div>
+      </article>
+
+      <article class="alumno-row pending">
+        <div class="alumno-main">
+          <div class="avatar">LF</div>
+          <div class="info">
+            <b>Thomas</b>
+            <span>Pecho · Chacabuco</span>
+          </div>
+        </div>
+        <div class="alumno-time">21:00 hs</div>
+        <div class="alumno-actions">
+          <span class="badge-pending">Sin PDF cargado</span>
+          <a class="btn-cta" href="#">Reagendar</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</main>
+
+<script src="profesor.js"></script>
+</body>
+</html>
